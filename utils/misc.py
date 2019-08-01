@@ -1,4 +1,5 @@
 import random
+import re
 import secrets
 
 def rand():
@@ -7,3 +8,7 @@ def rand():
 
 def generate_password():
     return secrets.token_urlsafe(16)
+
+
+def sanitize_string(string):
+    return re.sub(r'\s{2,}', ' ', string.strip())
